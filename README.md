@@ -19,6 +19,10 @@ Create a folder iot. From that folder execute the following command
     $ git clone https://github.com/arpitbbhayani/trex-iot.git
 ```
 
+####Import trex-iot-platform in IntelliJ IDEA
+Open intellij idea and follow the following path <br/> `File > New Project > Project Location > select trex-iot-platform folder in the folder trex-iot/`<br/>
+This will import the project in your IntelliJ Idea IDE.
+
 ###Setup Android ADT
 Download adt from following link
 `http://developer.android.com/sdk/index.html`
