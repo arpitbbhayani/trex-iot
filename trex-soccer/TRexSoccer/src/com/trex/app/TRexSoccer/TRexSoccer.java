@@ -2,23 +2,14 @@ package com.trex.app.TRexSoccer;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.Texture.TextureFilter;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.TimeUtils;
-
-import java.util.Iterator;
 
 public class TRexSoccer implements ApplicationListener {
 
@@ -28,17 +19,25 @@ public class TRexSoccer implements ApplicationListener {
     Texture playerTeam1 , playerTeam2;
     Array<Rectangle> team1 , team2;
 
+    long lastUpdateTime;
+
+    int[] arrayx = { 1 , 1 , -1 , -1 };
+    int[] arrayy = { 1 , -1 , 1 , -1 };
+
     @Override
     public void create() {
 
         // Loading Images
         playerTeam1 = new Texture(Gdx.files.internal("soccer/playerteam1.png"));
-        playerTeam1 = new Texture(Gdx.files.internal("soccer/playerteam2.png"));
+        playerTeam2 = new Texture(Gdx.files.internal("soccer/playerteam2.png"));
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 800, 480);
 
         spriteBatch = new SpriteBatch();
+
+        team1 = new Array<Rectangle>();
+        team2 = new Array<Rectangle>();
 
         spawnTeams();
 
@@ -69,10 +68,12 @@ public class TRexSoccer implements ApplicationListener {
         spriteBatch.end();
 
 
-        /*if(TimeUtils.nanoTime() - lastDropTime > 1000000000) spawnRaindrop();
+        if(TimeUtils.nanoTime() - lastUpdateTime > 10000000) {
+            updatePositions();
+        }
 
 
-        Iterator<Rectangle> iter = raindrops.iterator();
+        /*Iterator<Rectangle> iter = raindrops.iterator();
         while(iter.hasNext()) {
             Rectangle raindrop = iter.next();
             raindrop.y -= 200 * Gdx.graphics.getDeltaTime();
@@ -84,6 +85,7 @@ public class TRexSoccer implements ApplicationListener {
             }
 
         }*/
+
 
     }
 
@@ -100,6 +102,19 @@ public class TRexSoccer implements ApplicationListener {
     public void resume() {
     }
 
+
+    private void updatePositions() {
+        lastUpdateTime = TimeUtils.nanoTime();
+
+        for(Rectangle player: team1) {
+            player.x = player.x + arrayx[MathUtils.random(0,3)];
+            player.y = player.y + arrayy[MathUtils.random(0,3)];
+        }
+        for(Rectangle player: team2) {
+            player.x = player.x + arrayx[MathUtils.random(0,3)];
+            player.y = player.y + arrayy[MathUtils.random(0,3)];
+        }
+    }
 
     private void spawnTeams() {
 
