@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TRexSoccer/TRexSoccer.iml" filepath="$PROJECT_DIR$/TRexSoccer/TRexSoccer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TRexSoccer-android/TRexSoccer-android.iml" filepath="$PROJECT_DIR$/TRexSoccer-android/TRexSoccer-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TRexSoccer-desktop/TRexSoccer-desktop.iml" filepath="$PROJECT_DIR$/TRexSoccer-desktop/TRexSoccer-desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TRexSoccer-html/TRexSoccer-html.iml" filepath="$PROJECT_DIR$/TRexSoccer-html/TRexSoccer-html.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TRexSoccer-robovm/TRexSoccer-robovm.iml" filepath="$PROJECT_DIR$/TRexSoccer-robovm/TRexSoccer-robovm.iml" />
+    </modules>
+  </component>
+</project>
+
