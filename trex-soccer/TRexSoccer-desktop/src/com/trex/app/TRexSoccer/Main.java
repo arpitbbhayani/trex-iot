@@ -9,7 +9,19 @@ public class Main {
 		cfg.title = "TRexSoccer";
 		cfg.width = 800;
 		cfg.height = 480;
-		
-		new LwjglApplication(new TRexSoccer(), cfg);
+
+
+        /*TRexSoccer tRexSoccer = new TRexSoccer();
+        DataThread dataThread = new DataThread();
+        dataThread.addObserver(tRexSoccer);
+
+        Thread t = new Thread(dataThread);
+        t.start();
+
+        new LwjglApplication(tRexSoccer, cfg);*/
+
+        new LwjglApplication(new TRexSoccerControlTeam1(), cfg);
+
+
 	}
 }

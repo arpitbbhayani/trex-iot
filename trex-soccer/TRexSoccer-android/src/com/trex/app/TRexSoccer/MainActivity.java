@@ -13,7 +13,8 @@ public class MainActivity extends AndroidApplication {
         AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
         cfg.useAccelerometer = false;
         cfg.useCompass = false;
-        
-        initialize(new TRexSoccer(), cfg);
+
+        initialize(new TRexSoccerControlTeam1(), cfg);
+
     }
 }
