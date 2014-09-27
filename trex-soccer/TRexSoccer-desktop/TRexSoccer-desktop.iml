@@ -5,7 +5,6 @@
     <libelement value="jar://$MODULE_DIR$/libs/gdx-backend-lwjgl-natives.jar!/" />
     <libelement value="jar://$MODULE_DIR$/libs/gdx-natives.jar!/" />
     <varelement var="file://$PARENT-1-PROJECT_LOC$/TRexSoccer-android/assets" value="linksrc:assets" />
-    <varelement var="file://$PARENT-1-PROJECT_LOC$/TRexSoccer-android/assets" kind="linksrc:" value="assets" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
       <src_folder value="file://$PARENT-1-PROJECT_LOC$/TRexSoccer-android/assets" expected_position="1" />

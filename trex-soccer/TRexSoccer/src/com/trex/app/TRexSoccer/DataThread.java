@@ -83,7 +83,7 @@ public class DataThread extends Observable implements Runnable {
 
     public static JsonValue getData() throws Exception {
 
-        URL url = new URL(DATA_URL);
+        /*URL url = new URL(DATA_URL);
 
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
@@ -106,7 +106,8 @@ public class DataThread extends Observable implements Runnable {
         }
         in.close();
 
-        return jsonReader.parse(response.toString());
+        return jsonReader.parse(response.toString());*/
+        return new JsonValue("");
     }
 
     public void run() {

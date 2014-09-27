@@ -42,8 +42,12 @@ public class TRexSoccer implements ApplicationListener, Observer {
     String team1Name;
     String team2Name;
 
+    PlayerActor playerActor ;
+
     @Override
     public void create() {
+
+        playerActor = new PlayerActor();
 
         DataThread dataThread = new DataThread();
         dataThread.addObserver(this);
@@ -68,7 +72,7 @@ public class TRexSoccer implements ApplicationListener, Observer {
         playerTeam1 = new Texture(Gdx.files.internal("soccer/playerteam1.png"));
         playerTeam2 = new Texture(Gdx.files.internal("soccer/playerteam2.png"));
 
-        try {
+        /*try {
             this.metaData = DataThread.getMetaData();
             team1Name = this.metaData.get("t1").getString("N");
             team2Name = this.metaData.get("t2").getString("N");
@@ -82,7 +86,7 @@ public class TRexSoccer implements ApplicationListener, Observer {
         } catch (Exception e) {
             e.printStackTrace();
             return;
-        }
+        }*/
 
         // Asserting meta data is present.
 
@@ -116,12 +120,14 @@ public class TRexSoccer implements ApplicationListener, Observer {
 
             font.draw(spriteBatch, "3-2", 380, 470);
 
-            for(Rectangle player: team1) {
+            /*for(Rectangle player: team1) {
                 spriteBatch.draw(playerTeam1, player.x, player.y);
             }
             for(Rectangle player: team2) {
                 spriteBatch.draw(playerTeam2, player.x, player.y);
-            }
+            }*/
+
+            playerActor.moveBy(-1,-1);
 
         spriteBatch.end();
 
@@ -144,7 +150,7 @@ public class TRexSoccer implements ApplicationListener, Observer {
 
 
     private synchronized void updatePositions() {
-        lastUpdateTime = TimeUtils.nanoTime();
+        /*lastUpdateTime = TimeUtils.nanoTime();
         int i = 1;
 
         for(Rectangle player: team1) {
@@ -159,12 +165,12 @@ public class TRexSoccer implements ApplicationListener, Observer {
             player.x = this.playerData.get("t2" + i).getInt("la");
             player.y = this.playerData.get("t2" + i).getInt("lo");
             i++;
-        }
+        }*/
     }
 
     private void spawnTeams() {
 
-        for ( int i = 1 ; i <= 11 ; i++ ) {
+        /*for ( int i = 1 ; i <= 11 ; i++ ) {
             Rectangle player = new Rectangle();
             player.width = 8;
             player.height = 8;
@@ -181,7 +187,7 @@ public class TRexSoccer implements ApplicationListener, Observer {
             player.x = this.playerData.get("t2" + i).getInt("la");
             player.y = this.playerData.get("t2" + i).getInt("lo");
             team2.add(player);
-        }
+        }*/
 
     }
 
